@@ -1,5 +1,5 @@
 // Bump this when you change any cached file so clients pick up the new version.
-const CACHE = "poop-tracker-v3";
+const CACHE = "poop-tracker-v4";
 const ASSETS = [
   "./",
   "styles.css",

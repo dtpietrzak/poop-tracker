@@ -40,4 +40,9 @@ When you change any file in `public/`, bump `CACHE` in `public/sw.js` so install
   ```bash
   rsvg-convert -w 1200 -h 630 assets/og-image.svg -o public/og-image.png
   ```
+- `public/favicon.ico`: 16/32/48px, rendered from `icons/icon.svg`
+- `public/splash/`: iOS launch screens for every current iPhone and iPad, portrait and landscape. Regenerate them (and their `<link>` tags in `index.html`) with:
+  ```bash
+  python3 scripts/generate-splash.py --write
+  ```
 - `public/robots.txt`, `public/sitemap.xml`: crawler basics. Open Graph, Twitter and JSON-LD tags live in `index.html`.
