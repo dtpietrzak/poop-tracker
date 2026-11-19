@@ -1,0 +1,12 @@
+{
+  "name": "poop-tracker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 5180 --directory public",
+    "deploy": "cf deploy ./public"
+  },
+  "devDependencies": {
+    "cf": "^1.0.0-rc.1"
+  }
+}

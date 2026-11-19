@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Poop Tracker</title>
+  <meta name="description" content="Track your poops on a simple calendar. Everything stays on your device." />
+  <meta name="theme-color" content="#6b3e1f" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Poop Tracker" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-emoji" aria-hidden="true">💩</span>
+      <h1>Poop Tracker</h1>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="calendar" aria-label="Poop calendar">
+      <div class="cal-nav">
+        <button class="icon-btn" id="prev-month" aria-label="Previous month">‹</button>
+        <h2 id="month-label" aria-live="polite"></h2>
+        <button class="icon-btn" id="next-month" aria-label="Next month">›</button>
+      </div>
+      <div class="cal-weekdays" aria-hidden="true">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="cal-grid" id="cal-grid" role="grid"></div>
+      <div class="cal-footer">
+        <p id="month-count"></p>
+        <button class="text-btn" id="today-btn">Today</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Remove-poop confirmation -->
+  <div class="overlay" id="confirm-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <div class="modal-emoji" aria-hidden="true">🧻</div>
+      <h2 id="confirm-title">Remove this poop?</h2>
+      <p id="confirm-text"></p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="confirm-cancel">Keep it</button>
+        <button class="btn btn-danger" id="confirm-ok">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onboarding -->
+  <div class="overlay overlay-onboarding" id="onboarding" hidden>
+    <div class="modal modal-lg" role="dialog" aria-modal="true" aria-labelledby="onb-title">
+      <div class="onb-step" data-step="1">
+        <div class="modal-emoji big" aria-hidden="true">💩</div>
+        <h2 id="onb-title">Welcome to Poop Tracker</h2>
+        <p>A tiny app with one job: keeping track of the days you poop.</p>
+        <ul class="onb-list">
+          <li><span aria-hidden="true">👆</span> Tap a day on the calendar to log a poop.</li>
+          <li><span aria-hidden="true">💩</span> Logged days show a little poop instead of the date.</li>
+          <li><span aria-hidden="true">🧻</span> Tap a pooped day again to remove it.</li>
+        </ul>
+        <button class="btn btn-primary btn-block" id="onb-continue">Continue</button>
+      </div>
+      <div class="onb-step" data-step="2" hidden>
+        <div class="modal-emoji big" aria-hidden="true">⚠️</div>
+        <h2>Heads up</h2>
+        <p>Your poops are <strong>not saved in a database</strong>. They live only in this browser, on this device.</p>
+        <p>If your browser storage gets cleared, or something gets corrupted, your poop history will be gone for good.</p>
+        <button class="btn btn-primary btn-block" id="onb-done">Got it, let's poop!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
