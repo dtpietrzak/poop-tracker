@@ -36,3 +36,8 @@ When you change any file in `public/`, bump `CACHE` in `public/sw.js` so install
 - `public/app.js`: calendar rendering, storage, modals, onboarding
 - `public/sw.js`: offline cache (network first, falls back to cache)
 - `public/manifest.webmanifest` + `public/icons/`: PWA install metadata (PNGs rendered from `icons/icon.svg`)
+- `public/og-image.png`: 1200×630 social share image, rendered from `assets/og-image.svg`:
+  ```bash
+  rsvg-convert -w 1200 -h 630 assets/og-image.svg -o public/og-image.png
+  ```
+- `public/robots.txt`, `public/sitemap.xml`: crawler basics. Open Graph, Twitter and JSON-LD tags live in `index.html`.

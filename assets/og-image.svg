@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9a5d30"/>
+      <stop offset="0.55" stop-color="#6b3e1f"/>
+      <stop offset="1" stop-color="#3b2010"/>
+    </linearGradient>
+    <linearGradient id="poo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c98a52"/>
+      <stop offset="1" stop-color="#8f5426"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd9b0" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffd9b0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#1c0e05" flood-opacity="0.45"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1c0e05" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Poop drawn in a 512x512 box, same as the app icon -->
+    <symbol id="poop" viewBox="60 90 392 350">
+      <g fill="url(#poo)" stroke="#3b2010" stroke-width="10" stroke-linejoin="round">
+        <ellipse cx="256" cy="372" rx="150" ry="58"/>
+        <ellipse cx="256" cy="300" rx="116" ry="50"/>
+        <ellipse cx="256" cy="236" rx="80" ry="42"/>
+        <path d="M216 210 C 230 150, 270 140, 290 110 C 300 160, 296 200, 296 210 Z"/>
+      </g>
+      <circle cx="214" cy="300" r="22" fill="#fff7ef"/>
+      <circle cx="298" cy="300" r="22" fill="#fff7ef"/>
+      <circle cx="219" cy="304" r="11" fill="#3b2010"/>
+      <circle cx="303" cy="304" r="11" fill="#3b2010"/>
+      <path d="M206 352 Q 256 392 306 352" fill="none" stroke="#3b2010" stroke-width="10" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- subtle dotted texture -->
+  <g fill="#fff7ef" opacity="0.05">
+    <circle cx="80" cy="560" r="60"/><circle cx="1150" cy="40" r="90"/><circle cx="560" cy="600" r="30"/>
+  </g>
+
+  <!-- Left: copy -->
+  <g font-family="Noto Sans, Liberation Sans, sans-serif">
+    <use href="#poop" xlink:href="#poop" x="72" y="96" width="120" height="107" filter="url(#soft)"/>
+    <text x="72" y="300" font-size="84" font-weight="800" fill="#fff7ef" letter-spacing="-2">Poop Tracker</text>
+    <text x="76" y="360" font-size="34" font-weight="500" fill="#f1dcc6">Tap a day. Log a poop. That's it.</text>
+
+    <g font-size="24" font-weight="700" fill="#fff7ef">
+      <rect x="76" y="404" width="148" height="48" rx="24" fill="#fff7ef" fill-opacity="0.14"/>
+      <text x="150" y="436" text-anchor="middle">Private</text>
+      <rect x="238" y="404" width="184" height="48" rx="24" fill="#fff7ef" fill-opacity="0.14"/>
+      <text x="330" y="436" text-anchor="middle">Works offline</text>
+      <rect x="436" y="404" width="108" height="48" rx="24" fill="#fff7ef" fill-opacity="0.14"/>
+      <text x="490" y="436" text-anchor="middle">Free</text>
+    </g>
+
+    <text x="76" y="548" font-size="28" font-weight="700" fill="#e8d3bf" opacity="0.9">poop.davidp.dev</text>
+  </g>
+
+  <!-- Right: calendar card -->
+  <circle cx="900" cy="315" r="300" fill="url(#glow)"/>
+  <g transform="translate(900 315) rotate(4) translate(-230 -245)">
+    <rect width="460" height="490" rx="32" fill="#fbf6f1" filter="url(#shadow)"/>
+    <g font-family="Noto Sans, Liberation Sans, sans-serif">
+      <text x="230" y="62" text-anchor="middle" font-size="28" font-weight="800" fill="#3b2010">November</text>
+      <g font-size="15" font-weight="700" fill="#a07a5f" text-anchor="middle">
+        <text x="50" y="104">S</text><text x="110" y="104">M</text><text x="170" y="104">T</text><text x="230" y="104">W</text><text x="290" y="104">T</text><text x="350" y="104">F</text><text x="410" y="104">S</text>
+      </g>
+      <!-- 5 rows x 7 cols of day cells; start on Sunday for a tidy grid -->
+      <g id="cells" font-size="20" font-weight="700" fill="#3b2010" text-anchor="middle">
+        <!-- row 1 -->
+        <rect x="24" y="120" width="52" height="52" rx="12" fill="#f4e9de"/><text x="50" y="153">1</text>
+        <rect x="84" y="120" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="88" y="126" width="44" height="40"/>
+        <rect x="144" y="120" width="52" height="52" rx="12" fill="#f4e9de"/><text x="170" y="153">3</text>
+        <rect x="204" y="120" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="208" y="126" width="44" height="40"/>
+        <rect x="264" y="120" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="268" y="126" width="44" height="40"/>
+        <rect x="324" y="120" width="52" height="52" rx="12" fill="#f4e9de"/><text x="350" y="153">6</text>
+        <rect x="384" y="120" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="388" y="126" width="44" height="40"/>
+        <!-- row 2 -->
+        <rect x="24" y="180" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="28" y="186" width="44" height="40"/>
+        <rect x="84" y="180" width="52" height="52" rx="12" fill="#f4e9de"/><text x="110" y="213">9</text>
+        <rect x="144" y="180" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="148" y="186" width="44" height="40"/>
+        <rect x="204" y="180" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="208" y="186" width="44" height="40"/>
+        <rect x="264" y="180" width="52" height="52" rx="12" fill="#f4e9de"/><text x="290" y="213">12</text>
+        <rect x="324" y="180" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="328" y="186" width="44" height="40"/>
+        <rect x="384" y="180" width="52" height="52" rx="12" fill="#f4e9de"/><text x="410" y="213">14</text>
+        <!-- row 3 -->
+        <rect x="24" y="240" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="28" y="246" width="44" height="40"/>
+        <rect x="84" y="240" width="52" height="52" rx="12" fill="#f1dcc6"/><use href="#poop" xlink:href="#poop" x="88" y="246" width="44" height="40"/>
+        <rect x="144" y="240" width="52" height="52" rx="12" fill="#f4e9de"/><text x="170" y="273">17</text>
+        <rect x="204" y="240" width="52" height="52" rx="12" fill="#f1dcc6" stroke="#8a5229" stroke-width="3"/><use href="#poop" xlink:href="#poop" x="208" y="246" width="44" height="40"/>
+        <rect x="264" y="240" width="52" height="52" rx="12" fill="#f4e9de"/><text x="290" y="273">19</text>
+        <rect x="324" y="240" width="52" height="52" rx="12" fill="#f4e9de"/><text x="350" y="273">20</text>
+        <rect x="384" y="240" width="52" height="52" rx="12" fill="#f4e9de"/><text x="410" y="273">21</text>
+        <!-- row 4 -->
+        <rect x="24" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="50" y="333">22</text>
+        <rect x="84" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="110" y="333">23</text>
+        <rect x="144" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="170" y="333">24</text>
+        <rect x="204" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="230" y="333">25</text>
+        <rect x="264" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="290" y="333">26</text>
+        <rect x="324" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="350" y="333">27</text>
+        <rect x="384" y="300" width="52" height="52" rx="12" fill="#f4e9de"/><text x="410" y="333">28</text>
+        <!-- row 5 -->
+        <rect x="24" y="360" width="52" height="52" rx="12" fill="#f4e9de"/><text x="50" y="393">29</text>
+        <rect x="84" y="360" width="52" height="52" rx="12" fill="#f4e9de"/><text x="110" y="393">30</text>
+      </g>
+      <text x="24" y="458" font-size="18" font-weight="600" fill="#7a5b45">11 poops this month</text>
+      <text x="436" y="458" text-anchor="end" font-size="18" font-weight="800" fill="#8a5229">Today</text>
+    </g>
+  </g>
+</svg>
